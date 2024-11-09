@@ -592,6 +592,8 @@ impl<S> ThreadPoolBuilder<S> {
     }
 
     /// Sets the stack size of the worker threads
+    /// 
+    /// Value in *bytes*, see [`std::thread::Builder::stack_size`](https://doc.rust-lang.org/std/thread/struct.Builder.html#method.stack_size)
     pub fn stack_size(mut self, stack_size: usize) -> Self {
         self.stack_size = Some(stack_size);
         self
